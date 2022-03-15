@@ -31,7 +31,29 @@
     "/restaurants": {
       "get": {
         "tags": ["Restaurants"],
-        "summary": "Get all Restaurants in system",
+        "description": "Get all Restaurants in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
+            }
+          }
+        }
+      }
+    },
+
+    "/restaurant": {
+      "post": {
+        "tags": ["Restaurants"],
+        "description": "Create a new restaurant",
+        "parameters": [
+          {
+            "name": "restaurant",
+            "in": "body",
+            "description": "Restaurant we want to create"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",

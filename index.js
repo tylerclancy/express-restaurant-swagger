@@ -18,7 +18,7 @@ app.get('/restaurants', (req, res) => {
 
 app.post('/restaurant', (req, res) => {
   restaurants.push({ id: req.body.id, name: req.body.name });
-  res.send(`${restaurants} created.`);
+  res.send(`${JSON.stringify(restaurants)} created.`);
 });
 
 app.delete('/restaurant/:id', (req, res) => {
