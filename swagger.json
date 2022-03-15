@@ -63,6 +63,30 @@
           }
         }
       }
+    },
+
+    "/restaurant/:id": {
+      "delete": {
+        "tags": ["Restaurants"],
+        "description": "Delete a restaurant by id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": "true",
+            "description": "The ID of restaurant we want to delete",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Restaurant"
+            }
+          }
+        }
+      }
     }
   },
 
